@@ -13,13 +13,13 @@ def print_parameter(parameter):
 
 @app.route("/count/<int:parameter>")
 def count_parameter(parameter):
-    count = f""
+    count = ""
     for i in range(parameter):
         count += f"{i}\n"
     return count
 
 @app.route("/math/<int:parameter1>/<string:operation>/<int:parameter2>")
-def math(operation, parameter1, parameter2):
+def math(parameter1, operation, parameter2):  # Reordered parameters here
     if operation == "+":
         answer = parameter1 + parameter2
     elif operation == "-":
